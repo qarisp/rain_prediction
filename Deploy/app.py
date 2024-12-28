@@ -174,14 +174,14 @@ if model:
                 st.markdown("""
                     <div style='background-color: #FFE4E1; padding: 20px; border-radius: 10px;'>
                         <h3 style='color: #FF6B6B; margin: 0;'>☔ Rain Expected Tomorrow</h3>
-                        <p>Don't forget your umbrella! There's a {:.1f}% chance of rain.</p>
+                        <p style='color: #FF3333;'>Don't forget your umbrella! There's a {:.1f}% chance of rain.</p>
                     </div>
                 """.format(probability * 100), unsafe_allow_html=True)
             else:
                 st.markdown("""
                     <div style='background-color: #E1FFE4; padding: 20px; border-radius: 10px;'>
                         <h3 style='color: #6BFF6B; margin: 0;'>🌞 No Rain Expected Tomorrow</h3>
-                        <p>Clear skies ahead! Only a {:.1f}% chance of rain.</p>
+                        <p style='color: #4CAF50;'>Clear skies ahead! Only a {:.1f}% chance of rain.</p>
                     </div>
                 """.format(probability * 100), unsafe_allow_html=True)
 
