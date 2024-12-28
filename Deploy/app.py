@@ -31,7 +31,7 @@ class FeatureCreator(BaseEstimator, TransformerMixin):
 @st.cache_resource
 def load_model():
     try:
-        return pickle.load(open('xgboost_model.pkl', 'rb'))
+        return pickle.load(open('../Model/xgboost_model.pkl', 'rb'))
     except FileNotFoundError:
         st.error("Model file not found. Please check the path.")
         return None
