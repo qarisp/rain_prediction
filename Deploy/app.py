@@ -1,3 +1,4 @@
+import os
 import pickle
 import streamlit as st
 import pandas as pd
@@ -31,7 +32,9 @@ class FeatureCreator(BaseEstimator, TransformerMixin):
 @st.cache_resource
 def load_model():
     try:
-        return pickle.load(open('../Model/xgboost_model.pkl', 'rb'))
+        model_path = os.path.join(os.path.dirname(__file__), 'Model', 'xgboost_model.pkl')
+        return pickle.load(open(model_path, 'rb'))
+        # return pickle.load(open('../Model/xgboost_model.pkl', 'rb'))
     except FileNotFoundError:
         st.error("Model file not found. Please check the path.")
         return None
