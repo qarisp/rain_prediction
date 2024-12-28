@@ -31,7 +31,7 @@ class FeatureCreator(BaseEstimator, TransformerMixin):
 # Load the model
 @st.cache_resource
 def load_model():
-    model_path = os.path.join(os.path.dirname(__file__), 'Model', 'xgboost_model.pkl')
+    model_path = os.path.join(os.path.dirname(__file__), 'xgboost_model.pkl')
     st.write(f"Model is being loaded from: {model_path}")
 
     try:
