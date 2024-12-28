@@ -32,12 +32,10 @@ class FeatureCreator(BaseEstimator, TransformerMixin):
 @st.cache_resource
 def load_model():
     model_path = os.path.join(os.path.dirname(__file__), 'xgboost_model.pkl')
-    st.write(f"Model is being loaded from: {model_path}")
-
     try:
         return pickle.load(open(model_path, 'rb'))
     except FileNotFoundError:
-        st.error(f"Model file not found at {model_path}")
+        st.error("Model file not found. Please check the path.")
         return None
 
 # Define location and wind direction options
